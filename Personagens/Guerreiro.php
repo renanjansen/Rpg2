@@ -7,6 +7,7 @@
     $guerreiro->nome = "Yolo";
     $guerreiro->vida = 70;
     $guerreiro->ataque = 15;
+    $guerreiro->adrenalina = 2;
     $guerreiro->esquiva = 7;
     $guerreiro->defesa = 7;
     $guerreiro->especialNome = 'Espadada';
