@@ -19,25 +19,32 @@
             do {
                 
                 
-                    $adrenalina = 2;
+                    
                     $player1->vida -= $player2->atacar($adrenalina);
                     echo $player1->nome.' vida: '.$player1->vida.'<br>';
+                    if ($player1->vida <= 10 ) {
+                      
+                      $player1->adrenalina = 4;
+                      echo($player1->nome." em modo berseker! <br>");
+                    } elseif ($player2->vida <= 10) {
+                      
+                      $player2->adrenalina = 4;
+                      echo($player2->nome." em modo berseker! <br>");
+                    }
                     $player2->vida -= $player1->atacar($adrenalina);
                     echo $player2->nome.' vida: '.$player2->vida.'<br>';
                     
-                    if ($player1->vida <= $player1->vida/2 || $player2->vida == $player2->vida/2) {
-                        
-                        $adrenalina = 4;
-                    }
+                    
                     $winner = "";
                     if ($player1->vida >= 0 && $player2->vida <= 0) {
                         $winner = $player1->nome;
-                        echo $winner. "ganhou!";
+                        echo $winner. " ganhou! <br>";
                     } else if ($player2->vida >= 0 && $player1->vida <= 0){
                         $winner = $player2->nome;
-                        echo $winner. " ganhou!";
+                        echo $winner. " ganhou!<br>";
                         
                     }
+                    
                     
             
                 

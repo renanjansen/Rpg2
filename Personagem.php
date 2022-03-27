@@ -5,6 +5,7 @@
         public $nome;
         public $vida;
         public $ataque;
+        public $adrenalina;
         public $esquiva;
         public $defesa;
         public $especialNome;
@@ -99,7 +100,7 @@
 
         // Adrenalina será parametrizada de acordo com os pontos de vidas e itens recolhidos no jogo
         public function  especial ($adrenalina) {
-            return $this->ataque * $adrenalina;
+            return $this->ataque * $this->adrenalina;
         }
     }
 

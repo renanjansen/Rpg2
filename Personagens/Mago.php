@@ -7,6 +7,7 @@
     $mago->nome = "Misha";
     $mago->vida = 50;
     $mago->ataque = 7;
+    $mago->adrenalina = 3;
     $mago->esquiva = 6;
     $mago->defesa = 4;
     $mago->especialNome = 'Magia';
