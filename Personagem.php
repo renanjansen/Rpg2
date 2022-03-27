@@ -13,55 +13,49 @@
 
         public function jogarDado(){
 
-        $resultado = "";
+            $resultado = "";
             $ladoDoDado = rand(1,20);
 
             if ($ladoDoDado >= 1 && $ladoDoDado <= 5) {
 
-                //echo $ladoDoDado.' Errou!<br>';
+                echo $ladoDoDado.' Errou!<br>';
                 $resultado = 0;
-          
-              } else if ($ladoDoDado > 5 && $ladoDoDado <= 15) {
+            } else if ($ladoDoDado > 5 && $ladoDoDado <= 15) {
                 
-               //echo $ladoDoDado.' bem sucedido!<br>';
+               echo $ladoDoDado.' bem sucedido!<br>';
                 $resultado = 5;
-          
-              } else {
+            } else {
                 
-                //echo $ladoDoDado.' perfeito!<br>';
+                echo $ladoDoDado.' perfeito!<br>';
                 $resultado = 10;
-          
-              }
+            }
 
             return $resultado;
         }
         
-        public function atacar(){
-
+        public function atacar($adrenalina){
+            
+            
             $dano = 0;
             switch ($this->jogarDado()) {
                 case '5':
                     $dano = $this->ataque;
                     break;
-                case '10':
-                    $dano = $this->especial(2);
-                break;
-                    case '0':
-                        $dano = 0; 
-                    break;
+                    case '10':
+                        $dano = $this->especial($adrenalina);
+                            break;
+                        case '0':
+                            $dano = 0; 
+                                break;
                         
             }
             
-
             echo 'Ataque do '.$this->nome.' dano de: '.$dano.'<br>';
-
             return $dano;
             
         }
 
         public function defender($dano){
-
-            
             $status = '';
             switch ($this->jogarDado()) {
                 case 5 || 10:
@@ -71,8 +65,7 @@
                     case '0':
                         $dano = $dano;
                         $status = ' mal sucedida '; 
-                    break;
-                    
+                            break;
                     echo 'Defesa '.$status.' do '.$this->nome.' recebeu o dano de: '.$dano.'<br>';
                     
             }

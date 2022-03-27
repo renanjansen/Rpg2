@@ -19,23 +19,31 @@
             do {
                 
                 
-                
-                    $player1->vida -= $player2->atacar();
+                    $adrenalina = 2;
+                    $player1->vida -= $player2->atacar($adrenalina);
                     echo $player1->nome.' vida: '.$player1->vida.'<br>';
-                    $player2->vida -= $player1->atacar();
+                    $player2->vida -= $player1->atacar($adrenalina);
                     echo $player2->nome.' vida: '.$player2->vida.'<br>';
+                    
+                    if ($player1->vida <= $player1->vida/2 || $player2->vida == $player2->vida/2) {
+                        
+                        $adrenalina = 4;
+                    }
+                    $winner = "";
+                    if ($player1->vida >= 0 && $player2->vida <= 0) {
+                        $winner = $player1->nome;
+                        echo $winner. "ganhou!";
+                    } else if ($player2->vida >= 0 && $player1->vida <= 0){
+                        $winner = $player2->nome;
+                        echo $winner. " ganhou!";
+                        
+                    }
+                    
+            
                 
                 } while ($player1->vida >= 0 && $player2->vida >= 0);
 
     }
-    public function checkWinner($player1, $player2){
-
-        if ($player1->vida >= 0 && $player2->vida <= 0) {
-            echo $player1. "ganhou!";
-        } else {
-            echo $player2. "ganhou!";
-        }
-
-    }
+    
 }
     

@@ -15,6 +15,7 @@
     
 
     $luta1->turn($mago, $guerreiro);
+    //$luta1->checkWinner($mago, $guerreiro);
 
     //var_dump($mago->jogarDado());
     //var_dump($luta);
