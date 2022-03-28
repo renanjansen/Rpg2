@@ -19,7 +19,7 @@
             do {
                 
                 
-                    
+                    $adrenalina = $this->adrenalina;
                     $player1->vida -= $player2->atacar($adrenalina);
                     echo $player1->nome.' vida: '.$player1->vida.'<br>';
                     if ($player1->vida <= 10 ) {
