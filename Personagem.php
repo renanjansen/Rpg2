@@ -19,15 +19,15 @@
 
             if ($ladoDoDado >= 1 && $ladoDoDado <= 5) {
 
-                echo $ladoDoDado.' Errou!<br>';
+                echo 'Dado deu '.$ladoDoDado.' Errou!<br>';
                 $resultado = 0;
-            } else if ($ladoDoDado > 5 && $ladoDoDado <= 15) {
+            } else if ('Dado deu '.$ladoDoDado > 5 && $ladoDoDado <= 15) {
                 
-               echo $ladoDoDado.' bem sucedido!<br>';
+               echo 'Dado deu '.$ladoDoDado.' bem sucedido!<br>';
                 $resultado = 5;
             } else {
                 
-                echo $ladoDoDado.' perfeito!<br>';
+                echo 'Dado deu '.$ladoDoDado.' perfeito!<br>';
                 $resultado = 10;
             }
 

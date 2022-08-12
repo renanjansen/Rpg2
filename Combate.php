@@ -8,7 +8,7 @@
 
 
     
-    class Combate {
+    class Combate extends Personagem {
   
     public $player1;
     public $player2;
@@ -24,11 +24,11 @@
                     echo $player1->nome.' vida: '.$player1->vida.'<br>';
                     if ($player1->vida <= 10 ) {
                       
-                      $player1->adrenalina = 4;
+                      $player1->adrenalina += $player1->adrenalina;
                       echo($player1->nome." em modo berseker! <br>");
                     } elseif ($player2->vida <= 10) {
                       
-                      $player2->adrenalina = 4;
+                      $player2->adrenalina += $player2->adrenalina;
                       echo($player2->nome." em modo berseker! <br>");
                     }
                     $player2->vida -= $player1->atacar($adrenalina);
@@ -39,16 +39,18 @@
                     if ($player1->vida >= 0 && $player2->vida <= 0) {
                         $winner = $player1->nome;
                         echo $winner. " ganhou! <br>";
+                        
                     } else if ($player2->vida >= 0 && $player1->vida <= 0){
                         $winner = $player2->nome;
                         echo $winner. " ganhou!<br>";
                         
-                    }
+                        
+                    } 
                     
                     
             
                 
-                } while ($player1->vida >= 0 && $player2->vida >= 0);
+                } while ($winner == "");
 
     }
     
